@@ -44,6 +44,7 @@ services:
   websocket_producer:
     image: "namson0482/kafka-websocket-producer:1.0"
     container_name: "kafka-websocket-producer-container"
+    hostname: websocket_producer
     ports:
       - "8080:8080" #<Computer_port>:<Container_port>
     networks:
@@ -54,12 +55,14 @@ services:
       SPRING_KAFKA_BOOTSTRAPSERVERS: kafka:29092
       SPRING_PROFILES_ACTIVE: "docker-env"
       DATA_FILE: "/temp/"
+      WAIT_HOSTS: kafka:9092
     depends_on:
       - "kafka"
 
   websocket_consumer:
       image: "namson0482/kafka-websocket-consumer:1.0"
       container_name: "kafka-websocket-consumer-container"
+      hostname: websocket_consumer
       ports:
         - "8082:8082" #<Computer_port>:<Container_port>
 # Uncomment code below if you want to mount local directory to container directory
@@ -75,9 +78,9 @@ services:
         SPRING_KAFKA_BOOTSTRAPSERVERS: kafka:29092
         SPRING_PROFILES_ACTIVE: "docker-env"
         DATA_FILE: "/temp/"
+        WAIT_HOSTS: kafka:9092, websocket_producer:8080
       depends_on:
         - "kafka"
-        - "websocket_producer"
 
   websocket_frontend:
     image: "namson0482/websocket-frontend:1.0"
@@ -88,7 +91,6 @@ services:
       kafka-net:
         ipv4_address: 10.5.0.6
     depends_on:
-      - "check-kafka-started"
       - "websocket_producer"
       - "websocket_consumer"
 
@@ -105,11 +107,3 @@ services:
       KAFKA_BROKERCONNECT: "kafka:29092"
     depends_on:
       - "kafka"
-
-  check-kafka-started:
-    image: jwilder/dockerize:0.6.1
-    depends_on:
-      - kafka
-    command: 'dockerize -wait=tcp://kafka:29092'
-
-
