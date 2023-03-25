@@ -57,7 +57,7 @@ services:
       SPRING_PROFILES_ACTIVE: "docker-env"
       DATA_FILE: "/temp/"
       INTERVAL_TIME: "10000"
-      WAIT_HOSTS: kafka:9092
+      WAIT_HOSTS: kafka:29092
     depends_on:
       - "kafka"
 
@@ -80,7 +80,7 @@ services:
         SPRING_KAFKA_BOOTSTRAPSERVERS: kafka:29092
         SPRING_PROFILES_ACTIVE: "docker-env"
         DATA_FILE: "/temp/"
-        WAIT_HOSTS: kafka:9092, websocket_producer:8080
+        WAIT_HOSTS: kafka:29092, websocket_producer:8080
       depends_on:
         - "kafka"
 
