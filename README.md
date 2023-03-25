@@ -25,6 +25,16 @@ docker-compose up -d
 - Open any web browser and go to http://localhost:4200. If you get a error so it just refresh your browser. Root cause maybe that containers not yet started completely, If you use a other computer to access then you maybe get a errors CORS
 - As requirement, it needs to archive the raw files in other place. You can ssh into container consumer and find them in folder /temp. If you want to mount local folder with /temp of container then you just uncomment configuration in docker-compose.yml.
 
+### Services
+- Websocket Producer Service: read psv file and produce message.
+- Websocket Consumer Service: consume message and write raws data to file.
+- Websocket frontend: Display sale report
+- Kafdrop Container: view kafka topic
+- Schema-registry Container: define the structure of data
+- Control-Center Container: manage kafka
+- Kafka
+- Zookeeper
+
 ### Additional
 - you can use Kafdop to monitor Kafka, just access http://localhost:9000
 - websocket_producer service: INTERVAL_TIME: Change interval time to read data file, default 10 second. As requirement is 60 second. 
@@ -44,6 +54,7 @@ docker-compose up -d
 - Here, we should use Schema Avro to sending/received message over Kafka. Currently, I sent/received data over Apache Kafka by String and it is not good. 
 - I only check input data that are valid so source code not yet cover for all cases.
 - Not yet check with huge data.
+- If we need to improve security for Apache Kafka then we can apply the authorization as Kerberos, OAuth 2... for Apache Kafka
 
 ### Source Code Link
 - https://github.com/namson0482/websocket_kafka
