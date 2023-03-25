@@ -25,7 +25,6 @@ docker-compose up -d
 - Open any web browser and go to http://localhost:4200. If you get a error so it just refresh your browser. Root cause maybe that containers not yet started completely, If you use a other computer to access then you maybe get a errors CORS
 - As requirement, it needs to archive the raw files in other place. You can ssh into container consumer and find them in folder /temp. If you want to mount local folder with /temp of container then you just uncomment configuration in docker-compose.yml.
 
-
 ### Additional
 - you can use Kafdop to monitor Kafka, just access http://localhost:9000
 - websocket_producer service: INTERVAL_TIME: Change interval time to read data file, default 10 second. As requirement is 60 second. 
