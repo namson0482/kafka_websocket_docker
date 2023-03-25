@@ -1,6 +1,11 @@
 # Sale Report
 
-This docker will run Kafka and Websocket to show Sale Report. It already tested on 4 computer as MAC OS (Chip Intel), Window 10, Linux passed and it is failure on MAC OS (Chip M1)
+- This docker will run Kafka and Websocket to show Sale Report. 
+- It already tested on 4 computers 
+  + MAC OS(Chip Intell) passed.
+  + Window 10 passed.
+  + MAC OS(Chip M1): I test on 2 MAC computer then 1 computer passed and other one is failure.
+- Please view my video clip in this repository.
 
 ### Prerequisite
 - Your computer must install Docker in advance.
@@ -23,7 +28,7 @@ docker-compose up -d
 
 ### Additional
 - you can use Kafdop to monitor Kafka, just access http://localhost:9000
-- websocket_producer service: INTERVAL_TIME: Change interval time to read data file, default 60 second.
+- websocket_producer service: INTERVAL_TIME: Change interval time to read data file, default 10 second. As requirement is 60 second. 
 
 ### Deploy CI-CD on AWS
 - Now we get all Dockerfile to build docker images. We need to go to Amazon Elastic Container Service (ECS) and choose Amazon ECR to create new repositories at there.
