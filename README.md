@@ -5,7 +5,7 @@
   + MAC OS(Chip Intell) passed.
   + Window 10 passed.
   + MAC OS(Chip M1): I test on 2 MAC computer then 1 computer passed and other one is failure.
-- Please view my video clip in this repository.
+- Please view my video clip in this repository. File name is sale_report_720.mov
 
 ### Prerequisite
 - Your computer must install Docker in advance.
