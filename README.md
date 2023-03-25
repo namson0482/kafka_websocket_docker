@@ -45,10 +45,7 @@ docker-compose up -d
 - Next, create a new cluster. It is my server that will run our applications
 - Next, create a new task,
 - Back to our cluster to specify our task.
-- Done
 - There are multiple ways that we can expose our application. Above it is one out of way to do that.
-
-**DONE**
 
 ### Enhancement
 - Here, we should use Schema Avro to sending/received message over Kafka. Currently, I sent/received data over Apache Kafka by String and it is not good. 
