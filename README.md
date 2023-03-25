@@ -13,6 +13,11 @@
 ```
 docker-compose up -d
 ```
+- Open any web browser and go to http://websocket:7070
+
+### Additional
+- you can use Kafdop to monitor Kafka, just access http://localhost:9000
+
 DONE
 
 ### Enhancement
