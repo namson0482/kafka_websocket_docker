@@ -55,6 +55,7 @@ services:
       SPRING_KAFKA_BOOTSTRAPSERVERS: kafka:29092
       SPRING_PROFILES_ACTIVE: "docker-env"
       DATA_FILE: "/temp/"
+      INTERVAL_TIME: "10000"
       WAIT_HOSTS: kafka:9092
     depends_on:
       - "kafka"
