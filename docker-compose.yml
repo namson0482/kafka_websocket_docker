@@ -87,7 +87,7 @@ services:
     image: "namson0482/websocket-frontend:1.0"
     container_name: "websocket-frontend-container"
     ports:
-      - "7070:80"
+      - "4200:80"
     networks:
       kafka-net:
         ipv4_address: 10.5.0.6
