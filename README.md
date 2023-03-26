@@ -5,7 +5,7 @@
   + MACOS Ventura(Chip Intel) passed.
   + Window 10 passed.
   + Linux Ubuntu 22.04 passed.
-  + MACOS Ventura(Chip M1): 1 computer passed and other one failed.
+  + MACOS Ventura(Chip M1): 1 computer passed and other one failed. Root cause not yet investigated.
 - Please view my video clip in this repository. File name is sale_report_720.mov
 
 ### Services
