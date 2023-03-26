@@ -49,7 +49,7 @@ docker-compose up -d
 - There are multiple ways that we can expose our application. Above it is one out of way to do that.
 
 ### Enhancement
-- Here, we should use Schema Avro to sending/received message over Kafka. Currently, I sent/received data over Apache Kafka by String and it is not good. 
+- Here, we should use the Schema Registry server to manage schemas and using Avro/Protobuf/JSON to serialization/deserialization to sending/received message over Kafka. Currently, I sent/received data over Apache Kafka by String and it is not good. 
 - I only check input data that are valid so source code not yet cover for all cases.
 - Not yet check with huge data.
 - If we need to improve security for Apache Kafka then we can apply the authorization as Kerberos, OAuth 2... for Apache Kafka
