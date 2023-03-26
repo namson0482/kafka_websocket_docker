@@ -2,15 +2,25 @@
 
 - This docker will run Kafka and Websocket to show Sale Report. 
 - It already tested on 4 computers 
-  + MAC OS(Chip Intell) passed.
+  + MAC OS Ventura(Chip Intel) passed.
   + Window 10 passed.
-  + MAC OS(Chip M1): I test on 2 MAC computer then 1 computer passed and other one is failure.
+  + MAC OS Ventura(Chip M1): I test on 2 MAC computers then 1 computer passed and other one fail.
 - Please view my video clip in this repository. File name is sale_report_720.mov
 
-### Prerequisite
-- Your computer must install Docker in advance.
-- Your computer must get port number as **2181, 9000, 8080, 9092, 29092, 7070** and **8082** that are available.
-- All containers must run one computer because I only test this case.
+### Services
+- Websocket Producer Service: read psv file and produce message.
+- Websocket Consumer Service: consume message and write raws data to file.
+- Websocket frontend: Display sale report
+- Kafdrop Container: kafka management
+- Schema-registry Container: define the structure of data
+- Control-Center Container: kafka management
+- Kafka is Message Broker
+- Zookeeper
+
+### Prerequisites
+- The computer must install Docker in advance.
+- The computer must get port number as **2181, 9092, 29092, 9000, 8082, 8081, 8080, 9021** and **4200** that are available.
+- All containers must run on same computer because I only test this case. Other cases not yet test.
 
 ### Setup
 - Linux/Mac OS: open file /etc/hosts and add new line:
@@ -18,25 +28,15 @@
     127.0.0.1   websocket
 ```
 - For window, you can find out the hosts file in C:\Windows\System32\drivers\etc\hosts
-- Now execute a command:
+- Now execute a command as per below, and it takes in a while to start all services:
 ```
 docker-compose up -d
 ```
-- Open any web browser and go to http://localhost:4200. If you get a error so it just refresh your browser. Root cause maybe that containers not yet started completely, If you use a other computer to access then you maybe get a errors CORS
-- As requirement, it needs to archive the raw files in other place. You can ssh into container consumer and find them in folder /temp. If you want to mount local folder with /temp of container then you just uncomment configuration in docker-compose.yml.
-
-### Services
-- Websocket Producer Service: read psv file and produce message.
-- Websocket Consumer Service: consume message and write raws data to file.
-- Websocket frontend: Display sale report
-- Kafdrop Container: view kafka topic
-- Schema-registry Container: define the structure of data
-- Control-Center Container: manage kafka
-- Kafka
-- Zookeeper
+- Make sure all services that started completely then open any web browser and go to http://localhost:4200. If you get a error so it just refresh your browser. Root cause maybe that containers not yet started completely, If you use a other computer to access then you maybe get a errors CORS
+- As requirement, it needs to archive the raw files in other place. You can ssh into container consumer and find them in folder /temp. If you want to mount local folder to /temp folder of container consumer then you just uncomment configuration in docker-compose.yml of service websocket_consumer.
 
 ### Additional
-- you can use Kafdop to monitor Kafka, just access http://localhost:9000
+- you can use either Kafdop or Control-Center to monitor Kafka, just access http://localhost:9000 or http://localhost:9021
 - websocket_producer service: INTERVAL_TIME: Change interval time to read data file, default 10 second. As requirement is 60 second. 
 
 ### Deploy CI-CD on AWS
