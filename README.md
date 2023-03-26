@@ -2,20 +2,20 @@
 
 - This docker will run Kafka and Websocket to show Sale Report. 
 - It already tested on 4 computers 
-  + MAC OS Ventura(Chip Intel) passed.
+  + MACOS Ventura(Chip Intel) passed.
   + Window 10 passed.
-  + MAC OS Ventura(Chip M1): I test on 2 MAC computers then 1 computer passed and other one fail.
+  + MACOS Ventura(Chip M1): I tested on 2 MAC computers then 1 computer passed and other one failed.
 - Please view my video clip in this repository. File name is sale_report_720.mov
 
 ### Services
-- Websocket Producer Service: read psv file and produce message.
-- Websocket Consumer Service: consume message and write raws data to file.
-- Websocket frontend: Display sale report
-- Kafdrop Container: kafka management
-- Schema-registry Container: define the structure of data
-- Control-Center Container: kafka management
-- Kafka is Message Broker
-- Zookeeper
+- Websocket Producer Service: read psv file and produce messages.
+- Websocket Consumer Service: consume messages and write raws data to file.
+- Websocket frontend: Display sale report.
+- Kafdrop Container: kafka management.
+- Schema-registry Container: define the structure of data.
+- Control-Center Container: kafka management.
+- Kafka is Message Broker.
+- Zookeeper.
 
 ### Prerequisites
 - The computer must install Docker in advance.
