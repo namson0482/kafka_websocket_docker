@@ -1,9 +1,10 @@
 # Sale Report
 
 - This docker will run Kafka and Websocket to show Sale Report. 
-- It already tested on 4 computers 
+- It already tested on 5 computers: 
   + MACOS Ventura(Chip Intel) passed.
   + Window 10 passed.
+  + Linux Ubuntu 22.04 passed.
   + MACOS Ventura(Chip M1): I tested on 2 MAC computers then 1 computer passed and other one failed.
 - Please view my video clip in this repository. File name is sale_report_720.mov
 
