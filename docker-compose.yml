@@ -73,6 +73,7 @@ services:
     image: confluentinc/cp-enterprise-control-center:7.2.1
     hostname: control-center
     container_name: control-center
+    restart: on-failure
     depends_on:
       - kafka
       - schema-registry
@@ -137,6 +138,7 @@ services:
     container_name: "websocket-frontend-container"
     ports:
       - "4200:80"
+    restart: on-failure
     networks:
       kafka-net:
         ipv4_address: 10.5.0.6
