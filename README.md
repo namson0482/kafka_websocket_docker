@@ -1,5 +1,13 @@
-# Sale Report
+# DEMAND PLANING DEVELOPMENT TASK
+INTRODUCTION: WELCOME TO THE VNET SOLUTIONS.
+Sales manager Tom wants to aggregate the company's sales data.  Every day, he receives a lot of sales files from a difficult boss. People always want to see aggregated data as soon as possible.  Tom wants a web application that could help him aggregate data and display it in real time.
+Can you help him?
 
+### Tom's initial requirements were the following 
+We will create a producer java application, a consumer java application, and a website frontend.
+A Producer Java application: we constantly receive sales files within one day. For example, we have 3 files contain sales data of October, November, December. We want the application to loop for those 3 files in sequence every minute. After reading file, the application will aggregate the sales data by product, store to calculate the total sales units and the total sales revenue and then publish the result to the event platform (e.g. Kafka) and archive the raw files in another folder.
+
+### Overall
 - This docker will run Kafka and Websocket to show Sale Report. 
 - It already tested on 5 computers: 
   + MACOS Ventura(Chip Intel) passed.
