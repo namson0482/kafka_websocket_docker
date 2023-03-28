@@ -56,3 +56,7 @@ docker-compose up -d
 
 ### Source Code Link
 - https://github.com/namson0482/websocket_kafka
+
+### Document Reference
+- [Kafka cooperate registry server to serialize/deserialize data following Avro/Protobug/JSON](https://github.com/namson0482/kafka-oauth2)
+- [Kafka config OAuth 2](https://github.com/namson0482/kafka-oauth2)
