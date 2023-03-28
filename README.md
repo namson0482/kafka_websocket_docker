@@ -26,7 +26,7 @@
 ### Setup
 - Linux/Mac OS: open file /etc/hosts and add new line:
 ```
-    127.0.0.1   websocket
+127.0.0.1   websocket
 ```
 - For window, you can find out the hosts file in C:\Windows\System32\drivers\etc\hosts
 - Now execute a command as per below, and it takes in a while to start all services:
