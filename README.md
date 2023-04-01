@@ -58,9 +58,9 @@ docker-compose up -d
 
 ### Enhancement
 - Here, we should use the Schema Registry server to manage schemas and using Avro/Protobuf/JSON to serialization/deserialization to sending/received message over Kafka. Currently, I sent/received data over Apache Kafka by String and it is not good. 
-- I only check input data that are valid so source code not yet cover for all cases.
+- Current version, data input must be valid so if data input is invalid then it will throw the exception.
 - Not yet check with huge data.
-- If we need to improve security for Apache Kafka then we can apply the authorization as Kerberos, OAuth 2... for Apache Kafka
+- To improve security for Apache Kafka then we can apply the authorization as Kerberos, OAuth 2... for Apache Kafka
 
 ### Source Code Link
 - https://github.com/namson0482/websocket_kafka
