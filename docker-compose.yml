@@ -121,9 +121,11 @@ services:
       SPRING_KAFKA_BOOTSTRAPSERVERS: kafka:29092
       SPRING_PROFILES_ACTIVE: "docker-env"
       DATA_FILE: "/temp/"
-      INTERVAL_TIME: "12055000"
+      INTERVAL_TIME: "300000"
       SCHEMA_REGISTRY_HOST: "schema-registry"
       WAIT_HOSTS: kafka:29092, schema-registry:8081
+      WAIT_BEFORE: 10
+      WAIT_LOGGER_LEVEL: info
     depends_on:
       - "kafka"
       - "schema-registry"
@@ -148,7 +150,9 @@ services:
       SPRING_PROFILES_ACTIVE: "docker-env"
       DATA_FILE: "/temp/"
       SCHEMA_REGISTRY_HOST: "schema-registry"
-      WAIT_HOSTS: kafka:29092, websocket_producer:6064, schema-registry:8081
+      WAIT_HOSTS: websocket_producer:6064
+      WAIT_BEFORE: 20
+      WAIT_LOGGER_LEVEL: info
     depends_on:
       - "kafka"
       - "schema-registry"
@@ -165,4 +169,3 @@ services:
     depends_on:
       - "websocket_producer"
       - "websocket_consumer"
-42
