@@ -104,8 +104,9 @@ The WAIT_HOSTS environment variable is not mandatory, if not declared, the scrip
 If you want to use the script directly in docker-compose.yml instead of the Dockerfile, please note that the `command:` configuration option is limited to a single command so you should wrap in a `sh` call. For example:
 
 ```bash
-command: sh -c "/wait && /MySuperApp.sh"
+command: sh -c "/wait && /start.sh"
 ```
+Above, the command will be overriding in Dockerfile.
 
 ## Additional configuration options
 
